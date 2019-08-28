@@ -5,7 +5,7 @@ import { fetchPopularRepos } from '../utils/api';
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from "react-icons/fa";
 
 function LanguagesNav({selected, onUpdateLanguage}) {
-  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
+  const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python', 'C', 'Rust', 'Go'];
   
   return(
     <ul className="flex-center">
@@ -41,7 +41,7 @@ function ReposGrid ({repos}) {
             </h4>
             <img className='avatar' src={avatar_url} alt={`Avatar for ${login}`}/>
             <h2 className='center-text'>
-              <a href={html_url} className='link'>
+              <a href={html_url} className='link' target='_blank'>
                 {login}
               </a>
             </h2>
@@ -53,15 +53,15 @@ function ReposGrid ({repos}) {
                 </a>
               </li>
               <li>
-                <FaStar color='#D94A38' size={22} />
+                <FaStar color='#D94A38' size={18} />
                 {stargazers_count.toLocaleString()} stars
               </li>
               <li>
-                <FaCodeBranch color='#D94A38' size={22}/>
+                <FaCodeBranch color='#D94A38' size={18}/>
                 {forks.toLocaleString()} forks
               </li>
               <li>
-                <FaExclamationTriangle color='#D94A38' size={22}/>
+                <FaExclamationTriangle color='#D94A38' size={18}/>
                 {open_issues.toLocaleString()} open
               </li>
             </ul>
