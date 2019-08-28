@@ -52,7 +52,7 @@ export default class Popular extends Component {
     
     if(!this.state.repos[selectedLanguage]) {
       fetchPopularRepos(selectedLanguage)
-        .then((data) => {
+        .then(data => {
           this.setState(({repos}) => ({
             repos: {
               ...repos,
@@ -60,7 +60,7 @@ export default class Popular extends Component {
             }
           }))
         })
-        .catch(() => {
+        .catch(error => {
           console.warn(`Error fetching repositories: ${error}`);
       
           this.setState({
