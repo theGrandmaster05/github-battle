@@ -1,4 +1,4 @@
-body, html, #app {
+html, body, #app {
   margin: 0;
   height: 100%;
   width: 100%;
@@ -40,40 +40,6 @@ li {
   color: inherit;
 }
 
-ul {
-  padding: 0;
-}
-
-li {
-  list-style-type: none;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-clear {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  outline-color: #D94A38;
-}
-
-.nav-link {
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-}
-
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -89,6 +55,12 @@ li {
   margin: 20px;
 }
 
+.header-sm {
+  font-size: 28px;
+  font-weight: 300;
+  margin: 10px;
+}
+
 .avatar {
   width: 150px;
   height: 150px;
@@ -102,7 +74,7 @@ li {
 }
 
 .link {
-  color: #bb2e1f;
+  color: #D94A38;
   text-decoration: none;
   font-weight: bold;
 }
@@ -144,6 +116,30 @@ li {
 
 .repo img {
   margin-bottom: 8px;
+}
+
+.instructions-container {
+  margin: 100px 0;
+}
+
+.container-sm {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.battle-instructions {
+  padding: 0;
+  font-size: 25px;
+}
+
+.battle-instructions li {
+  flex: 1;
+  min-width: 300px;
+}
+
+.battle-instructions svg {
+  padding: 40px;
+  border-radius: 3px;
 }
 
 /*# sourceMappingURL=index.css.map */
