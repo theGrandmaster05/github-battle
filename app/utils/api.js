@@ -1,7 +1,8 @@
 'use strict';
-
-const id = "YOUR_CLIENT_ID";
-const sec = "YOUR_SECRET_ID";
+import { CLIENT_ID, CLIENT_SECRET } from '../../env';
+//Get your client ID and SECRET from here https://github.com/settings/developers
+const id = CLIENT_ID;
+const sec = CLIENT_SECRET;
 const params = `?client_id=${id}&client_server=${sec}`;
 
 function getErrorMsg(message, username) {
