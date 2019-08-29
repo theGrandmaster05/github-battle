@@ -1,5 +1,6 @@
 'use strict';
-import React,  {Component} from 'react';
+
+import React from 'react'
 import {FaUserFriends, FaFighterJet, FaTrophy, FaTimesCircle} from 'react-icons/fa'
 import PropTypes from 'prop-types'
 import Results from './Results'
@@ -28,22 +29,22 @@ function Instructions() {
   )
 }
 
-class PlayerInput extends Component {
+class PlayerInput extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     
     this.state = {
       username: ''
     }
     
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
   
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     
-    this.props.onSubmit(this.state.username);
+    this.props.onSubmit(this.state.username)
   }
   
   handleChange(event) {
@@ -84,7 +85,7 @@ class PlayerInput extends Component {
 PlayerInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired
-};
+}
 
 function PlayerPreview({username, onReset, label}) {
   return (
@@ -117,18 +118,18 @@ PlayerPreview.propTypes = {
   label: PropTypes.string.isRequired
 }
 
-export default class Battle extends Component {
+export default class Battle extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     
     this.state = {
       playerOne: null,
       playerTwo: null,
       battle: false
-    };
+    }
     
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleReset = this.handleReset.bind(this)
   }
   
   handleSubmit(id, player) {
@@ -147,7 +148,17 @@ export default class Battle extends Component {
     const {playerOne, playerTwo, battle} = this.state
     
     if (battle === true) {
-      return <Results playerOne={playerOne} playerTwo={playerTwo}/>
+      return (
+        <Results
+          playerOne={playerOne}
+          playerTwo={playerTwo}
+          onReset={() => this.setState({
+            playerOne: null,
+            playerTwo: null,
+            battle: false
+          })}
+        />
+      )
     }
     
     return (
